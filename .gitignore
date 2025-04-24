@@ -1,0 +1,32 @@
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Ignore backup and temp files
+*.bak
+*.tmp
+*~
+
+# Ignore logs
+*.log
+
+# GitHub Pages default
+.jekyll-cache/
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# Optional: ignore any node or build system if added later
+node_modules/
+dist/
+build/
+
+# Optional: prevent user-specific config
+.env
+
+graveyard/

@@ -1,0 +1,79 @@
+/* style.css */
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  margin: 40px;
+}
+
+.jspsych-content {
+  text-align: left;
+  max-width: 800px;
+  margin: auto;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.question-prompt {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.feature-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  border: 2px solid black;
+}
+
+.feature-table th,
+.feature-table td {
+  padding: 10px 16px;
+  text-align: left;
+  /* border: 1px solid black; */
+}
+
+.feature-table th {
+  font-weight: bold;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-column {
+  flex: 1 1 18%;
+  max-width: 240px;
+  text-align: center;
+}
+
+.summary-thumbnail {
+  width: 100%;
+  height: auto;
+  max-width: 240px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}

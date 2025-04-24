@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "Green throat",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Is blue",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Red tail",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Black crown",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Grey wings",
+        "label": "yes if positive / no if negative"
+    }
+]

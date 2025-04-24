@@ -1,0 +1,14 @@
+[
+    {
+        "feature": "Is red",
+        "label": "yes"
+    },
+    {
+        "feature": "Long bill",
+        "label": "no"
+    },
+    {
+        "feature": "Is small",
+        "label": "yes"
+    }
+]

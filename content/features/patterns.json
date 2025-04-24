@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "Spotted head",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Striped belly",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Solid tail",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Multi-colored back",
+        "label": "yes if positive / no if negative"
+    },
+    {
+        "feature": "Masked head",
+        "label": "yes if positive / no if negative"
+    }
+]
