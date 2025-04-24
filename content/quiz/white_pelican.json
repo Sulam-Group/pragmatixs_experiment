@@ -1,0 +1,18 @@
+[
+  {
+    "feature": "Long bill",
+    "label": "yes"
+  },
+  {
+    "feature": "Orange bill",
+    "label": "yes"
+  },
+  {
+    "feature": "Long neck",
+    "label": "yes"
+  },
+  {
+    "feature": "Is white",
+    "label": "yes"
+  }
+]

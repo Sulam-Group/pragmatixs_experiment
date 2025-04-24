@@ -134,7 +134,8 @@ async function loadSpeciesIntro() {
 }
 
 async function loadQuizzes(jsPsych) {
-  const quizzesList = ["summer_tanager", "horned_puffin"];
+  const quizzesList = shuffle(Object.values(speciesDict)).slice(0, 3);
+
   const quizzes = await Promise.all(
     quizzesList.map(async (species) => {
       const features = await loadJSON(`content/quiz/${species}.json`);

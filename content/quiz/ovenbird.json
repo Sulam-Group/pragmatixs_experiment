@@ -1,0 +1,18 @@
+[
+  {
+    "feature": "Striped belly",
+    "label": "yes"
+  },
+  {
+    "feature": "Is Multi-colored",
+    "label": "yes"
+  },
+  {
+    "feature": "Is red",
+    "label": "no"
+  },
+  {
+    "feature": "Yellow back",
+    "label": "yes"
+  }
+]

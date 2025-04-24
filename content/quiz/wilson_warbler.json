@@ -1,22 +1,18 @@
 [
   {
-    "feature": "Is black",
+    "feature": "Is small",
     "label": "yes"
   },
   {
-    "feature": "Is white",
+    "feature": "Dark nape",
     "label": "yes"
   },
   {
     "feature": "Is yellow",
-    "label": "no"
-  },
-  {
-    "feature": "Orange bill",
     "label": "yes"
   },
   {
-    "feature": "Long neck",
+    "feature": "Striped belly",
     "label": "no"
   }
 ]
