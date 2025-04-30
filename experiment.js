@@ -186,7 +186,7 @@ async function loadQuizzes(jsPsych) {
             : '<p>❌ Incorrect — please try again.</p>';
         },
         data: { phase: 'quiz_feedback' },
-        choices: ['Continue'],
+        choices: ["Click here before submitting a new answer"],
       };
 
       return {
