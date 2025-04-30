@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "Is red",
+        "label": "yes"
+    },
+    {
+        "feature": "Red wing",
+        "label": "yes"
+    },
+    {
+        "feature": "Is red",
+        "label": "yes"
+    },
+    {
+        "feature": "White underparts",
+        "label": "no"
+    },
+    {
+        "feature": "Masked head",
+        "label": "yes"
+    }
+]

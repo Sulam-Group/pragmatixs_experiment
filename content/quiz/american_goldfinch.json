@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "Is yellow",
+        "label": "yes"
+    },
+    {
+        "feature": "Is green",
+        "label": "no"
+    },
+    {
+        "feature": "Black tail",
+        "label": "yes"
+    },
+    {
+        "feature": "Black crown",
+        "label": "yes"
+    },
+    {
+        "feature": "Red crown",
+        "label": "no"
+    }
+]

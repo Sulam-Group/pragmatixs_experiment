@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "Blue head",
+        "label": "yes"
+    },
+    {
+        "feature": "Black chest",
+        "label": "yes"
+    },
+    {
+        "feature": "Green tail",
+        "label": "yes"
+    },
+    {
+        "feature": "Red tail",
+        "label": "no"
+    },
+    {
+        "feature": "Red belly",
+        "label": "no"
+    }
+]

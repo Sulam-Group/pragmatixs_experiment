@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "White neck",
+        "label": "yes"
+    },
+    {
+        "feature": "Black eye",
+        "label": "no"
+    },
+    {
+        "feature": "Red eye",
+        "label": "yes"
+    },
+    {
+        "feature": "Black back",
+        "label": "yes"
+    },
+    {
+        "feature": "White back",
+        "label": "no"
+    }
+]

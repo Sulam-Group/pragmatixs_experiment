@@ -1,0 +1,22 @@
+[
+    {
+        "feature": "White belly",
+        "label": "yes"
+    },
+    {
+        "feature": "Red nape",
+        "label": "yes"
+    },
+    {
+        "feature": "Striped back",
+        "label": "yes"
+    },
+    {
+        "feature": "Red back",
+        "label": "no"
+    },
+    {
+        "feature": "White back",
+        "label": "yes"
+    }
+]

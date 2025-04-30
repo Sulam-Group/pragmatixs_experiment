@@ -1,10 +1,10 @@
 // ─── Constants & Cached Templates ───────────────────────────────────────────────
 const speciesDict = {
-  'Bird A': 'white_pelican',
-  'Bird B': 'summer_tanager',
-  'Bird C': 'horned_puffin',
-  'Bird D': 'ovenbird',
-  'Bird E': 'wilson_warbler',
+  'Bird A': 'red_bellied_woodpecker',
+  'Bird B': 'american_goldfinch',
+  'Bird C': 'western_grebe',
+  'Bird D': 'green_jay',
+  'Bird E': 'cardinal',
 };
 const speciesList = Object.entries(speciesDict);
 
@@ -31,9 +31,9 @@ function shuffle(array) {
 function getProlificInfo() {
   const params = new URLSearchParams(window.location.search);
   return {
-    prolificId: params.get('PROLIFIC_PID'),
-    studyId: params.get('STUDY_ID'),
-    sessionId: params.get('SESSION_ID'),
+    prolific_id: params.get('PROLIFIC_PID'),
+    study_id: params.get('STUDY_ID'),
+    session_id: params.get('SESSION_ID'),
   };
 }
 
