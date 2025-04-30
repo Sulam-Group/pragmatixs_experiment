@@ -139,13 +139,12 @@ async function loadQuizzes(jsPsych) {
   const quizzes = await Promise.all(
     quizzesList.map(async (species) => {
       const features = await loadJSON(`content/quiz/${species}.json`);
-      const preamble = Mustache.render(TEMPLATES.quiz, {
-        trial_html: renderTrialHTML(features),
-      });
 
       const trial = {
         type: jsPsychSurveyMultiChoice,
-        preamble,
+        preamble: Mustache.render(TEMPLATES.quiz, {
+          trial_html: renderTrialHTML(features),
+        }),
         questions: [
           {
             prompt: "What is the species of this bird?",
@@ -188,6 +187,68 @@ async function loadQuizzes(jsPsych) {
   return quizzes;
 }
 
+async function loadTrials() {
+  const trialPageTemplate = await loadHTML("pages/trial.html");
+  const manifest = await loadJSON("content/trials/manifest.json");
+
+  const totalTrials = manifest.total_trials;
+  const conditions = manifest.conditions;
+  const samples = manifest.uids;
+
+  const numConditions = conditions.length;
+  const numTrialsPerCondition = Math.floor(totalTrials / numConditions);
+
+  const allTrialsData = await Promise.all(
+    conditions.map(async (condition) => {
+      const selectedSamples = shuffle(samples).slice(0, numTrialsPerCondition);
+      return await Promise.all(
+        selectedSamples.map(async (sample) => {
+          const data = await loadJSON(
+            `content/trials/${condition}/${sample}.json`
+          );
+          data.condition = condition;
+          data.uid = sample;
+          return data;
+        })
+      );
+    })
+  );
+  const trialsData = shuffle(allTrialsData.flat());
+  return trialsData.map((trialData, i) => ({
+    type: jsPsychSurveyMultiChoice,
+    preamble: Mustache.render(trialPageTemplate, {
+      i: i + 1,
+      total: totalTrials,
+      trial_html: renderTrialHTML(trialData.features),
+    }),
+    questions: [
+      {
+        prompt: "What is the species of this bird?",
+        name: "bird_choice",
+        options: Object.keys(speciesDict),
+        required: true,
+        horizontal: true,
+      },
+    ],
+    button_label: "Submit",
+    data: {
+      condition: trialData.condition,
+      uid: trialData.uid,
+      target: trialData.target,
+    },
+    on_finish: (data) => {
+      data.answer = speciesDict[data.response.bird_choice];
+    },
+  }));
+
+  //     return trials;
+  //   })
+  // );
+
+  const trials = shuffle(allTrials.flat());
+  return { timeline: trials };
+}
+
 // ─── Main Experiment Runner ──────────────────────────────────────────────────────
 async function runExperiment() {
   const jsPsych = initJsPsych({
@@ -201,14 +262,16 @@ async function runExperiment() {
   const [speciesIntro, speciesExamples, speciesSummary] =
     await loadSpeciesIntro();
   const quizzes = await loadQuizzes(jsPsych);
+  const trials = await loadTrials();
 
   const timeline = [
-    welcome,
-    featuresIntro,
-    speciesIntro,
-    ...speciesExamples,
-    speciesSummary,
-    ...quizzes,
+    // welcome,
+    // featuresIntro,
+    // speciesIntro,
+    // ...speciesExamples,
+    // speciesSummary,
+    // ...quizzes,
+    ...trials,
   ];
 
   jsPsych.run(timeline);
