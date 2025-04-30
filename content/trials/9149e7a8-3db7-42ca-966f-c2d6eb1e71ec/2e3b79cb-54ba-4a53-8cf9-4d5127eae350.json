@@ -1,0 +1,1 @@
+{"features": [{"feature": "Black bill", "label": "no"}, {"feature": "Black wing", "label": "yes"}, {"feature": "Solid wing", "label": "yes"}, {"feature": "Small (5 - 9 in)", "label": "no"}, {"feature": "Is white", "label": "no"}, {"feature": "Solid belly", "label": "yes"}], "target": "0b7fb948-3419-494f-bb00-6b1a4a7ee5b4"}

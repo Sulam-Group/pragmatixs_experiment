@@ -30,3 +30,4 @@ build/
 .env
 
 graveyard/
+copy_trials.py

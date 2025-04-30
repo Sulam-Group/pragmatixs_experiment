@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: copy-trials
+        name: Copy trials
+        entry: python ./copy_trials.py
+        language: system
+        pass_filenames: false
+  - repo: local
+    hooks:
+      - id: prettier-format
+        name: Prettier (format JS, JSON, HTML, CSS)
+        entry: prettier --write
+        language: node
+        types: [javascript, json, html, css]
