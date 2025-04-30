@@ -1,10 +1,10 @@
 // ─── Constants & Cached Templates ───────────────────────────────────────────────
 const speciesDict = {
-  "Bird A": "white_pelican",
-  "Bird B": "summer_tanager",
-  "Bird C": "horned_puffin",
-  "Bird D": "ovenbird",
-  "Bird E": "wilson_warbler",
+  'Bird A': 'white_pelican',
+  'Bird B': 'summer_tanager',
+  'Bird C': 'horned_puffin',
+  'Bird D': 'ovenbird',
+  'Bird E': 'wilson_warbler',
 };
 const speciesList = Object.entries(speciesDict);
 
@@ -28,14 +28,23 @@ function shuffle(array) {
     .map(({ value }) => value);
 }
 
+function getProlificInfo() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    prolificId: params.get('PROLIFIC_PID'),
+    studyId: params.get('STUDY_ID'),
+    sessionId: params.get('SESSION_ID'),
+  };
+}
+
 // ─── Template Loader ─────────────────────────────────────────────────────────────
 async function loadTemplates() {
   const paths = {
-    list: "templates/list.html",
-    manual: "templates/manual.html",
-    species: "templates/species.html",
-    trial: "templates/trial.html",
-    quiz: "pages/quiz.html",
+    list: 'templates/list.html',
+    manual: 'templates/manual.html',
+    species: 'templates/species.html',
+    trial: 'templates/trial.html',
+    quiz: 'pages/quiz.html',
   };
   const contents = await Promise.all(Object.values(paths).map(loadHTML));
   Object.keys(paths).forEach((key, i) => (TEMPLATES[key] = contents[i]));
@@ -60,22 +69,23 @@ function renderTrialHTML(features) {
 
 // ─── Experiment Loaders ──────────────────────────────────────────────────────────
 async function loadWelcome() {
-  const welcomeHTML = await loadHTML("pages/welcome.html");
+  const welcomeHTML = await loadHTML('pages/welcome.html');
   return {
     type: jsPsychInstructions,
     pages: [welcomeHTML],
     show_clickable_nav: true,
+    data: { phase: 'welcome' },
   };
 }
 
 async function loadFeaturesIntro() {
   const staticPages = await Promise.all([
-    loadHTML("pages/features/intro_1.html"),
-    loadHTML("pages/features/intro_2.html"),
-    loadHTML("pages/features/intro_3.html"),
+    loadHTML('pages/features/intro_1.html'),
+    loadHTML('pages/features/intro_2.html'),
+    loadHTML('pages/features/intro_3.html'),
   ]);
 
-  const examples = ["coloration", "patterns", "shape_size"];
+  const examples = ['coloration', 'patterns', 'shape_size'];
   const dynamicPages = await Promise.all(
     examples.map(async (list, i) => {
       const [page, features] = await Promise.all([
@@ -91,19 +101,21 @@ async function loadFeaturesIntro() {
     type: jsPsychInstructions,
     pages: [...staticPages, ...dynamicPages],
     show_clickable_nav: true,
+    data: { phase: 'features_intro' },
   };
 }
 
 async function loadSpeciesIntro() {
   const [introHTML, summaryTemplate] = await Promise.all([
-    loadHTML("pages/species/intro.html"),
-    loadHTML("pages/species/summary.html"),
+    loadHTML('pages/species/intro.html'),
+    loadHTML('pages/species/summary.html'),
   ]);
 
   const intro = {
     type: jsPsychInstructions,
     pages: [introHTML],
     show_clickable_nav: true,
+    data: { phase: 'species_intro' },
   };
 
   const examples = speciesList.map(([id, species]) => ({
@@ -111,13 +123,13 @@ async function loadSpeciesIntro() {
     preamble: Mustache.render(TEMPLATES.species, { id, species }),
     questions: [
       {
-        prompt: "Type a one-sentence description of the bird here:",
+        prompt: 'Type a one-sentence description of the bird here:',
         rows: 2,
         columns: 60,
         required: true,
       },
     ],
-    data: { phase: "species_description", species },
+    data: { phase: 'spcies_examples', species },
   }));
 
   const summary = {
@@ -128,6 +140,7 @@ async function loadSpeciesIntro() {
       }),
     ],
     show_clickable_nav: true,
+    data: { phase: 'species_summary' },
   };
 
   return [intro, examples, summary];
@@ -147,14 +160,15 @@ async function loadQuizzes(jsPsych) {
         }),
         questions: [
           {
-            prompt: "What is the species of this bird?",
-            name: "bird_choice",
+            prompt: 'What is the species of this bird?',
+            name: 'bird_choice',
             options: Object.keys(speciesDict),
             required: true,
             horizontal: true,
           },
         ],
-        button_label: "Submit",
+        button_label: 'Submit',
+        data: { phase: 'quiz', species },
         on_finish: (data) => {
           const answer = speciesDict[data.response.bird_choice];
           data.correct = answer === species;
@@ -168,10 +182,11 @@ async function loadQuizzes(jsPsych) {
         stimulus: () => {
           const last = jsPsych.data.get().last(1).values()[0];
           return last.correct
-            ? "<p>✅ Correct!</p>"
-            : "<p>❌ Incorrect — please try again.</p>";
+            ? '<p>✅ Correct!</p>'
+            : '<p>❌ Incorrect — please try again.</p>';
         },
-        choices: ["Continue"],
+        data: { phase: 'quiz_feedback' },
+        choices: ['Continue'],
       };
 
       return {
@@ -188,8 +203,8 @@ async function loadQuizzes(jsPsych) {
 }
 
 async function loadTrials() {
-  const trialPageTemplate = await loadHTML("pages/trial.html");
-  const manifest = await loadJSON("content/trials/manifest.json");
+  const trialPageTemplate = await loadHTML('pages/trial.html');
+  const manifest = await loadJSON('content/trials/manifest.json');
 
   const totalTrials = manifest.total_trials;
   const conditions = manifest.conditions;
@@ -213,6 +228,7 @@ async function loadTrials() {
       );
     })
   );
+
   const trialsData = shuffle(allTrialsData.flat());
   return trialsData.map((trialData, i) => ({
     type: jsPsychSurveyMultiChoice,
@@ -223,15 +239,16 @@ async function loadTrials() {
     }),
     questions: [
       {
-        prompt: "What is the species of this bird?",
-        name: "bird_choice",
+        prompt: 'What is the species of this bird?',
+        name: 'bird_choice',
         options: Object.keys(speciesDict),
         required: true,
         horizontal: true,
       },
     ],
-    button_label: "Submit",
+    button_label: 'Submit',
     data: {
+      phase: 'trial',
       condition: trialData.condition,
       uid: trialData.uid,
       target: trialData.target,
@@ -240,20 +257,73 @@ async function loadTrials() {
       data.answer = speciesDict[data.response.bird_choice];
     },
   }));
+}
 
-  //     return trials;
-  //   })
-  // );
+async function loadSurvey() {
+  const completionHTML = await loadHTML('pages/completion.html');
 
-  const trials = shuffle(allTrials.flat());
-  return { timeline: trials };
+  return {
+    type: jsPsychSurveyMultiChoice,
+    preamble: completionHTML,
+    questions: [
+      {
+        prompt: 'What is your age group?',
+        name: 'age',
+        options: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55+'],
+        required: true,
+      },
+      {
+        prompt: 'What is your self-identified gender?',
+        name: 'gender',
+        options: ['Female', 'Male', 'Non-binary', 'Prefer not to say'],
+        required: true,
+      },
+      {
+        prompt: 'What is your experience with bird identification?',
+        name: 'experience',
+        options: [
+          'No experience',
+          'Some experience (I birdwatch occasionally)',
+          'Moderate experience (I birdwatch regularly)',
+          'High experience (I am a professional birdwatcher)',
+        ],
+      },
+    ],
+    button_label: 'Continue',
+    data: { phase: 'survey' },
+  };
+}
+
+async function loadFeedback() {
+  const completionHTML = await loadHTML('pages/completion.html');
+
+  return {
+    type: jsPsychSurveyText,
+    preamble: completionHTML,
+    questions: [
+      {
+        prompt: 'Do you have any comments or feedback about the experiment?',
+        rows: 5,
+        columns: 60,
+        required: false,
+        name: 'feedback',
+      },
+    ],
+    button_label: 'Submit and return to Prolific',
+    data: { phase: 'feedback' },
+    on_finish: () => {
+      window.location.href =
+        'https://app.prolific.com/submissions/complete?cc=CQYC6OLS';
+    },
+  };
 }
 
 // ─── Main Experiment Runner ──────────────────────────────────────────────────────
 async function runExperiment() {
-  const jsPsych = initJsPsych({
-    on_finish: () => jsPsych.data.displayData(),
-  });
+  const jsPsych = initJsPsych();
+
+  const prolificInfo = getProlificInfo();
+  jsPsych.data.addProperties(prolificInfo);
 
   await loadTemplates();
 
@@ -263,15 +333,19 @@ async function runExperiment() {
     await loadSpeciesIntro();
   const quizzes = await loadQuizzes(jsPsych);
   const trials = await loadTrials();
+  const survey = await loadSurvey();
+  const feedback = await loadFeedback();
 
   const timeline = [
-    // welcome,
-    // featuresIntro,
-    // speciesIntro,
-    // ...speciesExamples,
-    // speciesSummary,
-    // ...quizzes,
+    welcome,
+    featuresIntro,
+    speciesIntro,
+    ...speciesExamples,
+    speciesSummary,
+    ...quizzes,
     ...trials,
+    survey,
+    feedback,
   ];
 
   jsPsych.run(timeline);
