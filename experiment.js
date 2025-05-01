@@ -123,7 +123,7 @@ async function loadSpeciesIntro() {
     preamble: Mustache.render(TEMPLATES.species, { id, species }),
     questions: [
       {
-        prompt: 'Type a one-sentence description of the bird here:',
+        prompt: 'Type your one-sentence description of the bird here:',
         rows: 2,
         columns: 60,
         required: true,
