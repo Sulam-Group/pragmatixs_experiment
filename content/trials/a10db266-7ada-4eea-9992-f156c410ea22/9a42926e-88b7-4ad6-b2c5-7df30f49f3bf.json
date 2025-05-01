@@ -1,0 +1,1 @@
+{"features": [{"feature": "Blue breast", "label": "yes"}, {"feature": "Solid wing", "label": "no"}, {"feature": "Iridescent bill", "label": "no"}, {"feature": "Green nape", "label": "yes"}, {"feature": "Buff underparts", "label": "no"}, {"feature": "Yellow leg", "label": "yes"}], "target": "b40055fd-0abe-41fc-94bb-c2801e234d6a"}
