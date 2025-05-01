@@ -1,10 +1,10 @@
 // ─── Constants & Cached Templates ───────────────────────────────────────────────
 const speciesDict = {
-  'Bird A': 'red_bellied_woodpecker',
-  'Bird B': 'american_goldfinch',
-  'Bird C': 'western_grebe',
-  'Bird D': 'green_jay',
-  'Bird E': 'cardinal',
+  'Bird A': 'horned_puffin',
+  'Bird B': 'pileated_woodpecker',
+  'Bird C': 'scarlet_tanager',
+  'Bird D': 'western_grebe',
+  'Bird E': 'wilson_warbler',
 };
 const speciesList = Object.entries(speciesDict);
 
@@ -203,8 +203,11 @@ async function loadQuizzes(jsPsych) {
 }
 
 async function loadTrials() {
-  const trialPageTemplate = await loadHTML('pages/trial.html');
-  const manifest = await loadJSON('content/trials/manifest.json');
+  const [trialIntroHTML, trialPageTemplate, manifest] = await Promise.all([
+    loadHTML('pages/trials/intro.html'),
+    loadHTML('pages/trials/trial.html'),
+    loadJSON('content/trials/manifest.json'),
+  ]);
 
   const totalTrials = manifest.total_trials;
   const conditions = manifest.conditions;
@@ -229,8 +232,15 @@ async function loadTrials() {
     })
   );
 
+  const trialsIntro = {
+    type: jsPsychInstructions,
+    pages: [trialIntroHTML],
+    show_clickable_nav: true,
+    data: { phase: 'trials_intro' },
+  };
+
   const trialsData = shuffle(allTrialsData.flat());
-  return trialsData.map((trialData, i) => ({
+  const trials = trialsData.map((trialData, i) => ({
     type: jsPsychSurveyMultiChoice,
     preamble: Mustache.render(trialPageTemplate, {
       i: i + 1,
@@ -257,6 +267,8 @@ async function loadTrials() {
       data.answer = speciesDict[data.response.bird_choice];
     },
   }));
+
+  return { timeline: [trialsIntro, ...trials] };
 }
 
 async function loadSurvey() {
@@ -343,7 +355,7 @@ async function runExperiment() {
     ...speciesExamples,
     speciesSummary,
     ...quizzes,
-    ...trials,
+    trials,
     survey,
     feedback,
   ];

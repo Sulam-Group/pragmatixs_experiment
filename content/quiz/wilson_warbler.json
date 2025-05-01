@@ -1,0 +1,18 @@
+[
+    {
+      "feature": "Is small",
+      "label": "yes"
+    },
+    {
+      "feature": "Dark nape",
+      "label": "yes"
+    },
+    {
+      "feature": "Is yellow",
+      "label": "yes"
+    },
+    {
+      "feature": "Striped belly",
+      "label": "no"
+    }
+  ]
