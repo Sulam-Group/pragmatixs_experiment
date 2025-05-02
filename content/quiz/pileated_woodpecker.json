@@ -1,22 +1,22 @@
 [
-    {
-      "feature": "Red nape",
-      "label": "yes"
-    },
-    {
-      "feature": "Black wings",
-      "label": "yes"
-    },
-    {
-      "feature": "Is red",
-      "label": "no"
-    },
-    {
-      "feature": "Striped belly",
-      "label": "no"
-    },
-    {
-        "feature": "Black underparts",
-        "label": "yes"
-    }
-  ]
+  {
+    "feature": "Red nape",
+    "label": "yes"
+  },
+  {
+    "feature": "Black wings",
+    "label": "yes"
+  },
+  {
+    "feature": "Is red",
+    "label": "no"
+  },
+  {
+    "feature": "Striped belly",
+    "label": "no"
+  },
+  {
+    "feature": "Black underparts",
+    "label": "yes"
+  }
+]

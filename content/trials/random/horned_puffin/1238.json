@@ -1,0 +1,1 @@
+{"features": [{"feature": "Masked head", "label": "no"}, {"feature": "Red crown", "label": "no"}, {"feature": "Buff under tail", "label": "yes"}, {"feature": "Is brown", "label": "no"}, {"feature": "Olive forehead", "label": "no"}, {"feature": "Purple upper tail", "label": "yes"}], "target": "horned_puffin"}

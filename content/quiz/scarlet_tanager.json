@@ -1,18 +1,18 @@
 [
-    {
-      "feature": "Is red",
-      "label": "yes"
-    },
-    {
-      "feature": "Black wings",
-      "label": "yes"
-    },
-    {
-      "feature": "Is white",
-      "label": "no"
-    },
-    {
-      "feature": "Red belly",
-      "label": "yes"
-    }
-  ]
+  {
+    "feature": "Is red",
+    "label": "yes"
+  },
+  {
+    "feature": "Black wings",
+    "label": "yes"
+  },
+  {
+    "feature": "Is white",
+    "label": "no"
+  },
+  {
+    "feature": "Red belly",
+    "label": "yes"
+  }
+]

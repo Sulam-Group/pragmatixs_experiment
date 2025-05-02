@@ -1,0 +1,1 @@
+{"features": [{"feature": "Is black", "label": "yes"}, {"feature": "Unique pattern head", "label": "yes"}, {"feature": "Blue nape", "label": "no"}, {"feature": "Blue forehead", "label": "no"}, {"feature": "Red under tail", "label": "yes"}, {"feature": "Brown underparts", "label": "no"}], "target": "horned_puffin"}

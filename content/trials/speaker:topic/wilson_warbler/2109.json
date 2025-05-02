@@ -1,0 +1,11 @@
+{
+  "features": [
+    { "feature": "Yellow throat", "label": "yes" },
+    { "feature": "Solid breast", "label": "yes" },
+    { "feature": "Solid belly", "label": "yes" },
+    { "feature": "Is yellow", "label": "yes" },
+    { "feature": "Yellow underparts", "label": "yes" },
+    { "feature": "Yellow breast", "label": "yes" }
+  ],
+  "target": "wilson_warbler"
+}

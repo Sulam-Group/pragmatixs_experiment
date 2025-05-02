@@ -1,18 +1,18 @@
 [
-    {
-      "feature": "Is small",
-      "label": "yes"
-    },
-    {
-      "feature": "Dark crown",
-      "label": "yes"
-    },
-    {
-      "feature": "Is yellow",
-      "label": "yes"
-    },
-    {
-      "feature": "Striped belly",
-      "label": "no"
-    }
-  ]
+  {
+    "feature": "Is small",
+    "label": "yes"
+  },
+  {
+    "feature": "Dark crown",
+    "label": "yes"
+  },
+  {
+    "feature": "Is yellow",
+    "label": "yes"
+  },
+  {
+    "feature": "Striped belly",
+    "label": "no"
+  }
+]

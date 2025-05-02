@@ -1,0 +1,1 @@
+{"features": [{"feature": "White underparts", "label": "yes"}, {"feature": "Pink breast", "label": "no"}, {"feature": "Striped breast", "label": "yes"}, {"feature": "White crown", "label": "yes"}, {"feature": "Olive bill", "label": "no"}, {"feature": "Yellow eye", "label": "no"}], "target": "pileated_woodpecker"}

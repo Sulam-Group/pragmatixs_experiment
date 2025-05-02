@@ -1,0 +1,1 @@
+{"features": [{"feature": "Grey breast", "label": "no"}, {"feature": "Green leg", "label": "yes"}, {"feature": "Black crown", "label": "yes"}, {"feature": "Olive upperparts", "label": "yes"}, {"feature": "Is red", "label": "no"}, {"feature": "Red eye", "label": "yes"}], "target": "scarlet_tanager"}

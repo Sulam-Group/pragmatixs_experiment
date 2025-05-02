@@ -1,0 +1,1 @@
+{"features": [{"feature": "All-purpose bill", "label": "yes"}, {"feature": "Yellow underparts", "label": "yes"}, {"feature": "Yellow belly", "label": "no"}, {"feature": "Is yellow", "label": "yes"}, {"feature": "Shorter than head bill", "label": "yes"}, {"feature": "Black crown", "label": "yes"}], "target": "wilson_warbler"}

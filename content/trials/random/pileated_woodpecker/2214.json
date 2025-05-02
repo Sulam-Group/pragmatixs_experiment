@@ -1,0 +1,1 @@
+{"features": [{"feature": "White breast", "label": "no"}, {"feature": "Yellow underparts", "label": "no"}, {"feature": "Solid back", "label": "no"}, {"feature": "Curved (up or down) bill", "label": "yes"}, {"feature": "Pink nape", "label": "no"}, {"feature": "Red leg", "label": "no"}], "target": "pileated_woodpecker"}

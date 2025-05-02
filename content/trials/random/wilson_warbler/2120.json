@@ -1,0 +1,1 @@
+{"features": [{"feature": "Olive eye", "label": "no"}, {"feature": "Hooked bill", "label": "yes"}, {"feature": "Blue breast", "label": "no"}, {"feature": "Orange underparts", "label": "no"}, {"feature": "Grey underparts", "label": "no"}, {"feature": "Grey upperparts", "label": "no"}], "target": "wilson_warbler"}

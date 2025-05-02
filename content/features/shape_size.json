@@ -1,22 +1,22 @@
 [
-    {
-        "feature": "Hooked bill",
-        "label": "yes if positive / no if negative"
-    },
-    {
-        "feature": "Is small",
-        "label": "yes if positive / no if negative"
-    },
-    {
-        "feature": "Spatulate bill",
-        "label": "yes if positive / no if negative"
-    },
-    {
-        "feature": "Is duck-shaped",
-        "label": "yes if positive / no if negative"
-    },
-    {
-        "feature": "Rounded wings",
-        "label": "yes if positive / no if negative"
-    }
+  {
+    "feature": "Hooked bill",
+    "label": "yes if positive / no if negative"
+  },
+  {
+    "feature": "Is small",
+    "label": "yes if positive / no if negative"
+  },
+  {
+    "feature": "Spatulate bill",
+    "label": "yes if positive / no if negative"
+  },
+  {
+    "feature": "Is duck-shaped",
+    "label": "yes if positive / no if negative"
+  },
+  {
+    "feature": "Rounded wings",
+    "label": "yes if positive / no if negative"
+  }
 ]

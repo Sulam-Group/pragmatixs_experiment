@@ -1,0 +1,1 @@
+{"features": [{"feature": "Grey upperparts", "label": "no"}, {"feature": "Buff upperparts", "label": "no"}, {"feature": "Green forehead", "label": "yes"}, {"feature": "Yellow breast", "label": "yes"}, {"feature": "Brown crown", "label": "yes"}, {"feature": "Small (5 - 9 in)", "label": "no"}], "target": "western_grebe"}

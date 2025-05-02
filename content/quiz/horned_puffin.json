@@ -1,22 +1,22 @@
 [
-    {
-      "feature": "Is black",
-      "label": "yes"
-    },
-    {
-      "feature": "Is white",
-      "label": "yes"
-    },
-    {
-      "feature": "Is yellow",
-      "label": "no"
-    },
-    {
-      "feature": "Orange bill",
-      "label": "yes"
-    },
-    {
-      "feature": "Long neck",
-      "label": "no"
-    }
-  ]
+  {
+    "feature": "Is black",
+    "label": "yes"
+  },
+  {
+    "feature": "Is white",
+    "label": "yes"
+  },
+  {
+    "feature": "Is yellow",
+    "label": "no"
+  },
+  {
+    "feature": "Orange bill",
+    "label": "yes"
+  },
+  {
+    "feature": "Long neck",
+    "label": "no"
+  }
+]

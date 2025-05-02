@@ -1,0 +1,1 @@
+{"features": [{"feature": "Is blue", "label": "yes"}, {"feature": "Black wing", "label": "no"}, {"feature": "Purple bill", "label": "no"}, {"feature": "Pointed wings", "label": "no"}, {"feature": "Red leg", "label": "yes"}, {"feature": "Red upper tail", "label": "yes"}], "target": "pileated_woodpecker"}

@@ -253,20 +253,22 @@ async function loadTrials() {
     loadJSON('content/trials/manifest.json'),
   ]);
 
-  const totalTrials = manifest.total_trials;
   const conditions = manifest.conditions;
-  const samples = manifest.uids;
-
-  const numConditions = conditions.length;
-  const numTrialsPerCondition = Math.floor(totalTrials / numConditions);
+  const samples = manifest.samples;
+  const species = Object.keys(samples);
 
   const allTrialsData = await Promise.all(
     conditions.map(async (condition) => {
-      const selectedSamples = shuffle(samples).slice(0, numTrialsPerCondition);
+      const selectedSpecies = shuffle(species).slice(0, 4);
+      const selectedSamples = selectedSpecies.map((species) => [
+        species,
+        shuffle(samples[species])[0],
+      ]);
       return await Promise.all(
-        selectedSamples.map(async (sample) => {
+        selectedSamples.map(async ([species, sample]) => {
+          console.log(condition, species, sample);
           const data = await loadJSON(
-            `content/trials/${condition}/${sample}.json`
+            `content/trials/${condition}/${species}/${sample}.json`
           );
           data.condition = condition;
           data.uid = sample;
@@ -288,7 +290,7 @@ async function loadTrials() {
     type: jsPsychSurveyMultiChoice,
     preamble: Mustache.render(trialPageTemplate, {
       i: i + 1,
-      total: totalTrials,
+      total: trialsData.length,
       trial_html: renderTrialHTML(trialData.features),
     }),
     questions: [
@@ -373,7 +375,6 @@ async function loadFeedback() {
 // ─── Main Experiment Runner ──────────────────────────────────────────────────────
 async function runExperiment() {
   const prolificInfo = getProlificInfo();
-  console.log(prolificInfo);
 
   const jsPsych = initJsPsych({
     on_finish: async () => {

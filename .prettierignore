@@ -1,0 +1,8 @@
+# Ignore the build folder
+build/
+
+# Ignore all trial JSON files
+content/trials/
+
+# Ignore specific generated files
+dist/**/*.js

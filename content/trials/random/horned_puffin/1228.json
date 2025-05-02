@@ -1,0 +1,1 @@
+{"features": [{"feature": "Red upperparts", "label": "yes"}, {"feature": "Chicken-like-marsh", "label": "yes"}, {"feature": "Red breast", "label": "no"}, {"feature": "Yellow eye", "label": "no"}, {"feature": "Olive throat", "label": "yes"}, {"feature": "Black belly", "label": "yes"}], "target": "horned_puffin"}

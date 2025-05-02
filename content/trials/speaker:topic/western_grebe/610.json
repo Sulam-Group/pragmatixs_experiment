@@ -1,0 +1,1 @@
+{"features": [{"feature": "Is black", "label": "yes"}, {"feature": "Black nape", "label": "yes"}, {"feature": "Solid wing", "label": "yes"}, {"feature": "Black eye", "label": "no"}, {"feature": "Striped wing", "label": "yes"}, {"feature": "White nape", "label": "yes"}], "target": "western_grebe"}

@@ -1,0 +1,1 @@
+{"features": [{"feature": "Brown bill", "label": "yes"}, {"feature": "Pink back", "label": "yes"}, {"feature": "Olive upperparts", "label": "yes"}, {"feature": "Sandpiper-like", "label": "no"}, {"feature": "Green throat", "label": "no"}, {"feature": "Green under tail", "label": "no"}], "target": "scarlet_tanager"}

@@ -10,6 +10,9 @@ repos:
     hooks:
       - id: prettier-format
         name: Prettier (format JS, JSON, HTML, CSS)
-        entry: prettier --write
+        entry: ./node_modules/.bin/prettier
         language: node
         types: [javascript, json, html, css]
+        args: ['--write', '.']
+        always_run: true
+        pass_filenames: false

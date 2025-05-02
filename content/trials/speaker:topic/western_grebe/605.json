@@ -1,0 +1,1 @@
+{"features": [{"feature": "Black eye", "label": "no"}, {"feature": "White breast", "label": "yes"}, {"feature": "Is black", "label": "yes"}, {"feature": "White throat", "label": "yes"}, {"feature": "White nape", "label": "yes"}, {"feature": "Solid breast", "label": "yes"}], "target": "western_grebe"}
