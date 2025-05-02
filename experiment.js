@@ -281,7 +281,7 @@ async function loadSurvey() {
       {
         prompt: 'What is your age group?',
         name: 'age',
-        options: ['Under 18', '18-24', '25-34', '35-44', '45-54', '55+'],
+        options: ['18-24', '25-34', '35-44', '45-54', '55+'],
         required: true,
       },
       {
