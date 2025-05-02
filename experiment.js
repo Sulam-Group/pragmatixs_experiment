@@ -1,4 +1,8 @@
 // ─── Constants & Cached Templates ───────────────────────────────────────────────
+const endpoint =
+  'https://script.google.com/macros/s/AKfycbzt0aihjNtwq9N4ELBpDJZlAQrHuspsYcvcDoYQpZzuUei2N0HInGsEavXcV393iXYn/exec';
+const key = 'iAZZ1EKsl@aWN7PW';
+
 const speciesDict = {
   'Bird A': 'horned_puffin',
   'Bird B': 'pileated_woodpecker',
@@ -31,10 +35,50 @@ function shuffle(array) {
 function getProlificInfo() {
   const params = new URLSearchParams(window.location.search);
   return {
-    prolific_id: params.get('PROLIFIC_PID'),
+    prolific_pid: params.get('PROLIFIC_PID'),
     study_id: params.get('STUDY_ID'),
     session_id: params.get('SESSION_ID'),
   };
+}
+
+async function postResults(data) {
+  let attempt = 0;
+  let maxRetries = 5;
+  let delay = 1000;
+
+  console.log(data);
+
+  const payload = new URLSearchParams({
+    secret: key,
+    prolific_pid: data.prolific_pid,
+    study_id: data.study_id,
+    session_id: data.session_id,
+    trials: JSON.stringify(data.trials),
+  });
+
+  data.secret = key;
+  while (attempt <= 10) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: payload,
+      });
+      if (response.ok) {
+        console.log('Data posted successfully');
+        return;
+      } else {
+        console.warn('Failed to post data:', response.statusText);
+      }
+    } catch (err) {
+      console.error('Error posting data:', err);
+    }
+
+    attempt++;
+    if (attempt <= maxRetries) {
+      await new Promise((res) => setTimeout(res, delay));
+      delay *= 2;
+    }
+  }
 }
 
 // ─── Template Loader ─────────────────────────────────────────────────────────────
@@ -323,18 +367,29 @@ async function loadFeedback() {
     ],
     button_label: 'Submit and return to Prolific',
     data: { phase: 'feedback' },
-    on_finish: () => {
-      window.location.href =
-        'https://app.prolific.com/submissions/complete?cc=CQYC6OLS';
-    },
   };
 }
 
 // ─── Main Experiment Runner ──────────────────────────────────────────────────────
 async function runExperiment() {
-  const jsPsych = initJsPsych();
-
   const prolificInfo = getProlificInfo();
+  console.log(prolificInfo);
+
+  const jsPsych = initJsPsych({
+    on_finish: async () => {
+      const data = jsPsych.data.get().json();
+
+      await postResults({
+        prolific_pid: prolificInfo.prolific_pid,
+        study_id: prolificInfo.study_id,
+        session_id: prolificInfo.session_id,
+        trials: JSON.parse(data),
+      });
+
+      window.location.href =
+        'https://app.prolific.com/submissions/complete?cc=CQYC6OLS';
+    },
+  });
   jsPsych.data.addProperties(prolificInfo);
 
   await loadTemplates();
