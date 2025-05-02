@@ -48,7 +48,7 @@ body {
 
 .feature-table th,
 .feature-table td {
-  padding: 5px 16px;
+  padding: 0px 16px;
   text-align: left;
   /* border: 1px solid black; */
 }
