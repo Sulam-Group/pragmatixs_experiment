@@ -378,6 +378,14 @@ async function runExperiment() {
 
   const jsPsych = initJsPsych({
     on_finish: async () => {
+      const button = document.querySelector('.jspsych-btn');
+      if (button) button.disabled = true;
+
+      const msg = document.createElement('p');
+      msg.textContent = 'Saving your responses... please wait';
+      msg.style.fontStyle = 'italic';
+      document.querySelector('.jspsych-content').appendChild(msg);
+
       const data = jsPsych.data.get().json();
 
       await postResults({
