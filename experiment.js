@@ -4,10 +4,10 @@ const endpoint =
 const key = 'iAZZ1EKsl@aWN7PW';
 
 const speciesDict = {
-  'Bird A': 'horned_puffin',
-  'Bird B': 'pileated_woodpecker',
-  'Bird C': 'scarlet_tanager',
-  'Bird D': 'western_grebe',
+  'Bird A': 'american_goldfinch',
+  'Bird B': 'black_and_white_warbler',
+  'Bird C': 'pileated_woodpecker',
+  'Bird D': 'scarlet_tanager',
   'Bird E': 'wilson_warbler',
 };
 const speciesList = Object.entries(speciesDict);

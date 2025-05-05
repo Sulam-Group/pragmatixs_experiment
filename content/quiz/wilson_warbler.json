@@ -8,6 +8,10 @@
     "label": "yes"
   },
   {
+    "feature": "Black wings",
+    "label": "no"
+  },
+  {
     "feature": "Is yellow",
     "label": "yes"
   },
