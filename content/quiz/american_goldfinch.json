@@ -1,0 +1,22 @@
+[
+  {
+    "feature": "Is yello",
+    "label": "yes"
+  },
+  {
+    "feature": "Is red",
+    "label": "no"
+  },
+  {
+    "feature": "Black wings",
+    "label": "yes"
+  },
+  {
+    "feature": "White nape",
+    "label": "no"
+  },
+  {
+    "feature": "Black bill",
+    "label": "no"
+  }
+]

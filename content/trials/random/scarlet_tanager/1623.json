@@ -1,1 +1,0 @@
-{"features": [{"feature": "White bill", "label": "no"}, {"feature": "Gull-like", "label": "no"}, {"feature": "Is green", "label": "no"}, {"feature": "Olive crown", "label": "yes"}, {"feature": "Swallow-like", "label": "yes"}, {"feature": "Pink crown", "label": "yes"}], "target": "scarlet_tanager"}

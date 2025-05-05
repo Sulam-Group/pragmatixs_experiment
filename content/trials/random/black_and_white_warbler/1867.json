@@ -1,0 +1,1 @@
+{"features": [{"feature": "Blue belly", "label": "no"}, {"feature": "Yellow bill", "label": "no"}, {"feature": "Green nape", "label": "yes"}, {"feature": "Brown breast", "label": "no"}, {"feature": "Buff belly", "label": "no"}, {"feature": "Orange bill", "label": "no"}], "target": "black_and_white_warbler"}

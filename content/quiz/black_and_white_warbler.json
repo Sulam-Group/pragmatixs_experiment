@@ -1,10 +1,10 @@
 [
   {
-    "feature": "Red crest",
+    "feature": "Is black",
     "label": "yes"
   },
   {
-    "feature": "Black wings",
+    "feature": "Is white",
     "label": "yes"
   },
   {
@@ -12,11 +12,11 @@
     "label": "no"
   },
   {
-    "feature": "Striped belly",
+    "feature": "Is yellow",
     "label": "no"
   },
   {
-    "feature": "Black underparts",
+    "feature": "Is small",
     "label": "yes"
   }
 ]
