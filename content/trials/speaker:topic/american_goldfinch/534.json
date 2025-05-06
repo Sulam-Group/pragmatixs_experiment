@@ -1,11 +1,1 @@
-{
-  "features": [
-    { "feature": "Yellow belly", "label": "yes" },
-    { "feature": "Is yellow", "label": "yes" },
-    { "feature": "Solid belly", "label": "yes" },
-    { "feature": "Black wing", "label": "yes" },
-    { "feature": "Solid breast", "label": "yes" },
-    { "feature": "Black forehead", "label": "yes" }
-  ],
-  "target": "american_goldfinch"
-}
+{"features": [{"feature": "Yellow belly", "label": "yes"}, {"feature": "Is yellow", "label": "yes"}, {"feature": "Solid belly", "label": "yes"}, {"feature": "Black wing", "label": "yes"}, {"feature": "Solid breast", "label": "yes"}, {"feature": "Black forehead", "label": "yes"}], "target": "american_goldfinch"}

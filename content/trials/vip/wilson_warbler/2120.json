@@ -1,0 +1,11 @@
+{
+  "features": [
+    { "feature": "Black wing", "label": "yes" },
+    { "feature": "All-purpose bill", "label": "yes" },
+    { "feature": "White belly", "label": "yes" },
+    { "feature": "Black leg", "label": "yes" },
+    { "feature": "Grey leg", "label": "yes" },
+    { "feature": "Yellow underparts", "label": "yes" }
+  ],
+  "target": "wilson_warbler"
+}

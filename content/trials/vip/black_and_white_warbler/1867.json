@@ -1,0 +1,11 @@
+{
+  "features": [
+    { "feature": "Black wing", "label": "yes" },
+    { "feature": "All-purpose bill", "label": "yes" },
+    { "feature": "White belly", "label": "yes" },
+    { "feature": "Black leg", "label": "yes" },
+    { "feature": "Solid breast", "label": "yes" },
+    { "feature": "Notched tail tail", "label": "yes" }
+  ],
+  "target": "black_and_white_warbler"
+}

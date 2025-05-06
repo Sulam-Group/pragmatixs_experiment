@@ -1,11 +1,1 @@
-{
-  "features": [
-    { "feature": "White nape", "label": "yes" },
-    { "feature": "White breast", "label": "yes" },
-    { "feature": "Black eye", "label": "yes" },
-    { "feature": "White throat", "label": "yes" },
-    { "feature": "Brown upperparts", "label": "no" },
-    { "feature": "Striped wing", "label": "yes" }
-  ],
-  "target": "black_and_white_warbler"
-}
+{"features": [{"feature": "White nape", "label": "yes"}, {"feature": "White breast", "label": "yes"}, {"feature": "Black eye", "label": "yes"}, {"feature": "White throat", "label": "yes"}, {"feature": "Brown upperparts", "label": "no"}, {"feature": "Striped wing", "label": "yes"}], "target": "black_and_white_warbler"}

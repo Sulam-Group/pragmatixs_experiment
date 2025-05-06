@@ -1,16 +1,1 @@
-{
-  "trials": 20,
-  "conditions": [
-    "random",
-    "speaker:literal",
-    "speaker:pragmatic",
-    "speaker:topic"
-  ],
-  "samples": {
-    "wilson_warbler": [2120],
-    "pileated_woodpecker": [2214],
-    "scarlet_tanager": [1629],
-    "american_goldfinch": [534],
-    "black_and_white_warbler": [1867]
-  }
-}
+{"trials": 20, "conditions": ["random", "vip", "speaker:literal", "speaker:pragmatic", "speaker:topic"], "samples": {"wilson_warbler": [2120], "pileated_woodpecker": [2214], "scarlet_tanager": [1629], "american_goldfinch": [534], "black_and_white_warbler": [1867]}}

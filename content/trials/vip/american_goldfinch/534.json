@@ -1,0 +1,11 @@
+{
+  "features": [
+    { "feature": "Black wing", "label": "yes" },
+    { "feature": "All-purpose bill", "label": "yes" },
+    { "feature": "Grey leg", "label": "yes" },
+    { "feature": "Black leg", "label": "yes" },
+    { "feature": "Notched tail tail", "label": "yes" },
+    { "feature": "Solid breast", "label": "yes" }
+  ],
+  "target": "american_goldfinch"
+}

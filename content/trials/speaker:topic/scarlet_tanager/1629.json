@@ -1,11 +1,1 @@
-{
-  "features": [
-    { "feature": "Solid breast", "label": "yes" },
-    { "feature": "Solid belly", "label": "yes" },
-    { "feature": "Black eye", "label": "yes" },
-    { "feature": "Black wing", "label": "yes" },
-    { "feature": "Is white", "label": "no" },
-    { "feature": "Is yellow", "label": "no" }
-  ],
-  "target": "scarlet_tanager"
-}
+{"features": [{"feature": "Solid breast", "label": "yes"}, {"feature": "Solid belly", "label": "yes"}, {"feature": "Black eye", "label": "yes"}, {"feature": "Black wing", "label": "yes"}, {"feature": "Is white", "label": "no"}, {"feature": "Is yellow", "label": "no"}], "target": "scarlet_tanager"}

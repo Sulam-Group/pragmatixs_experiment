@@ -1,7 +1,7 @@
 // ─── Constants & Cached Templates ───────────────────────────────────────────────
 const endpoint =
-  'https://script.google.com/macros/s/AKfycbzt0aihjNtwq9N4ELBpDJZlAQrHuspsYcvcDoYQpZzuUei2N0HInGsEavXcV393iXYn/exec';
-const key = 'iAZZ1EKsl@aWN7PW';
+  'https://script.google.com/macros/s/AKfycbxrifa9YVbUOMkJbc1OrP1eI-_0ch9Hp202eH9b3a-PELsEN0GmQYjR3gogkmdXKPsC/exec';
+const key = '4S9#b8Q%drXyT*ps';
 
 const speciesDict = {
   'Bird A': 'american_goldfinch',

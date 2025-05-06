@@ -1,0 +1,11 @@
+{
+  "features": [
+    { "feature": "Black wing", "label": "yes" },
+    { "feature": "All-purpose bill", "label": "yes" },
+    { "feature": "Grey leg", "label": "yes" },
+    { "feature": "Small (5 - 9 in)", "label": "yes" },
+    { "feature": "White nape", "label": "yes" },
+    { "feature": "Black leg", "label": "yes" }
+  ],
+  "target": "pileated_woodpecker"
+}
