@@ -46,8 +46,6 @@ async function postResults(data) {
   let maxRetries = 5;
   let delay = 1000;
 
-  console.log(data);
-
   const payload = new URLSearchParams({
     secret: key,
     prolific_pid: data.prolific_pid,
@@ -266,7 +264,6 @@ async function loadTrials() {
       ]);
       return await Promise.all(
         selectedSamples.map(async ([species, sample]) => {
-          console.log(condition, species, sample);
           const data = await loadJSON(
             `content/trials/${condition}/${species}/${sample}.json`
           );
